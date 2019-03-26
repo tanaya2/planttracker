@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
         $connection = new PDO($dsn, $username, $password, $options);
 		
         // SECOND: Get the contents of the form and store it in an array
-        $new_work = array( 
+        $new_entry = array( 
             "planttype=" => $_POST['planttype'], 
             "height" => $_POST['height'],
             "watered" => $_POST['watered'],
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         );
         
         // THIRD: Turn the array into a SQL statement
-        $sql = "INSERT INTO entries (planttype, height, watered, notes) VALUES (planttype, height, watered, notes)";        
+        $sql = "INSERT INTO entries (planttype, height, watered, notes) VALUES (:planttype, :height, :watered, :notes)";        
         
         // FOURTH: Now write the SQL to the database
         $statement = $connection->prepare($sql);

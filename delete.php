@@ -1,4 +1,3 @@
-
 <?php 
     // include the config file 
     require "../config.php";
@@ -24,7 +23,7 @@
             // execute the statement
             $statement->execute();
             // Success message
-            $success = "Entry successfully deleted";
+            $success = "entry successfully deleted";
         } catch(PDOException $error) {
             // if there is an error, tell us what it is
             echo $sql . "<br>" . $error->getMessage();
@@ -52,9 +51,7 @@
 
 
 <h2>Delete a user</h2>
-
 <?php if ($success) echo $success; ?>
-
 <!-- This is a loop, which will loop through each result in the array -->
 <?php foreach($result as $row) { ?>
 
