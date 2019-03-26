@@ -40,6 +40,11 @@ if (isset($_POST['submit'])) {
 <p>Entry successfully added.</p>
 <?php } ?>
 
+<h2>Add a work</h2>
+
+<?php if (isset($_POST['submit']) && $statement) { ?>
+<p>Work successfully added.</p>
+<?php } ?>
 <!--form to collect data for each artwork-->
 
 <form method="post">
